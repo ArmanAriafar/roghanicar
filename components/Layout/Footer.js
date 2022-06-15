@@ -2,7 +2,11 @@
 import Link from "next/link";
 
 //? Icons
-import { FaPhoneSquareAlt, FaWhatsappSquare, FaInstagramSquare } from "react-icons/fa";
+import {
+    FaPhoneSquareAlt,
+    FaWhatsappSquare,
+    FaInstagramSquare,
+} from "react-icons/fa";
 
 //? JSX
 const Footer = () => {
@@ -14,14 +18,16 @@ const Footer = () => {
                         <FaPhoneSquareAlt />
                     </a>
                 </Link>
-                <a href="https://wa.me/0989108803727" target="_blank">
+                <a href="https://wa.me/0989108803727">
                     <FaWhatsappSquare />
                 </a>
-                <a href="https://instagram.com/roghanicar" target="_blank">
+                <a href="https://instagram.com/roghanicar">
                     <FaInstagramSquare />
                 </a>
             </div>
-            <p className="text-xs font-bold text-slate-500">تمامی حقوق، توسط شرکت یدک پیشگام اطلس محفوظ شده است</p>
+            <p className="text-xs font-bold text-slate-500">
+                تمامی حقوق، توسط شرکت یدک پیشگام اطلس محفوظ شده است
+            </p>
         </footer>
     );
 };
