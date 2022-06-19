@@ -2,7 +2,7 @@
 //? required
 import axios from "axios";
 export const getServerSideProps = async () => {
-    const { data } = await axios.get("http://localhost:3000/api/products");
+    const { data } = await axios.get("https://roghanicar.vercel.app/api/products");
     return {
         props: {
             productsData: data,
