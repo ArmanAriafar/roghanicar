@@ -3,8 +3,8 @@ export default function ProductDesktopArticle({ image, name, price }) {
         <article
             className="
             grid h-36 w-80 grid-rows-[3fr_1.5fr_.5fr] items-center justify-items-center rounded-lg 
-            bg-white p-2 shadow-lg shadow-slate-400 lg:grid-cols-2 lg:grid-rows-[3fr_1fr] lg:gap-x-4 
-            lg:overflow-ellipsis lg:hover:shadow-none duration-200 lg:hover:translate-y-1 lg:hover:bg-slate-50"
+            bg-white p-2 shadow-lg shadow-slate-400 duration-200 lg:grid-cols-2 lg:grid-rows-[3fr_1fr] 
+            lg:gap-x-4 lg:overflow-ellipsis lg:hover:translate-y-1 lg:hover:bg-slate-50 lg:hover:shadow-none"
         >
             <div
                 className="
@@ -13,7 +13,9 @@ export default function ProductDesktopArticle({ image, name, price }) {
             >
                 <img src={image} alt={name} title={name} className="h-full" />
             </div>
-            <h1 className="self-start text-[13px] font-bold text-slate-500 lg:col-span-1 lg:text-sm">{name}</h1>
+            <h1 className="self-start text-[13px] font-bold text-slate-500 lg:col-span-1 lg:text-sm">
+                {name}
+            </h1>
             <p className="self-end justify-self-end font-serif text-xs font-bold text-slate-400">
                 <span className="text-[8px]">تومان</span> {price.toLocaleString()}
             </p>

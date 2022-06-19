@@ -1,9 +1,20 @@
+//! SSP
+//? required
+import axios from "axios";
+export const getServerSideProps = async () => {
+    const { data } = await axios.get("http://localhost:3000/api/products");
+    return {
+        props: {
+            productsData: data,
+        },
+    };
+};
+
 //? Required
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { data } from "../../data/db";
 
 //? Components
 import ProductsHeaderSection from "../../components/ProductsPage/ProductsHeaderSection";
@@ -12,7 +23,7 @@ import ProductMobileArticle from "../../components/ProductsPage/ProductMobileArt
 import ProductDesktopArticle from "../../components/ProductsPage/ProductDesktopArticle";
 
 //? JSX
-export default function ProductPage() {
+export default function ProductPage({ productsData }) {
     const [screenWidth, setScreenWidth] = useState(0);
 
     useEffect(() => {
@@ -25,7 +36,7 @@ export default function ProductPage() {
     }, []);
 
     const productListHandler = () => {
-        const productList = data.map((product, key) => {
+        const productList = productsData.map((product, key) => {
             if (screenWidth < 1024) {
                 return (
                     <Link href={`/products/${product.id}`} key={key}>

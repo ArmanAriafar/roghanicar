@@ -3,7 +3,9 @@
 import axios from "axios";
 export const getServerSideProps = async (context) => {
     const { productId } = context.params;
-    const { data } = await axios.get(`http://localhost:4000/products/${productId}`);
+    const { data } = await axios.get(
+        `http://localhost:3000/api/products/${productId}`
+    );
     return {
         props: {
             product: data,
